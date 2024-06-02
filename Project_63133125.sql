@@ -232,8 +232,35 @@ VALUES
   (N'Váy Dài Dự Tiệc Nữ', 700000, 8, N'Váy dài dự tiệc với thiết kế sang trọng, chất liệu vải mềm mại, phù hợp cho các buổi dạ tiệc.', 30, 2, N'product30.jpg');
 GO
 
-select SP.*, LH.TenLoai,NCC.TenNCC
-from SanPham SP
-join LoaiHang LH on SP.MaLoai=LH.MaLoai
-JOIN NhaCungCap NCC ON SP.MaNCC=NCC.MaNCC
+
+CREATE PROCEDURE SanPham_TimKiem
+	@TenSP nvarchar(100)=NULL,
+	@TenLoai nvarchar(100)= NULL,
+	@TenNCC nvarchar(100)=NULL
+AS
+BEGIN
+DECLARE @SqlStr NVARCHAR(4000),
+		@ParamList nvarchar(2000)
+SELECT @SqlStr = '
+       SELECT SP.*, LH.TenLoai,NCC.TenNCC
+       FROM from SanPham SP
+			join LoaiHang LH on SP.MaLoai=LH.MaLoai
+			JOIN NhaCungCap NCC ON SP.MaNCC=NCC.MaNCC
+       WHERE  (1=1)
+       '
+IF @TenSP IS NOT NULL
+       SELECT @SqlStr = @SqlStr + '
+              AND (TenSP LIKE ''%'+@TenSP+'%'')
+              '
+IF @TenLoai IS NOT NULL
+       SELECT @SqlStr = @SqlStr + '
+              AND (TenSP LIKE ''%'+@TenLoai+'%'')
+			  '
+IF @TenNCC IS NOT NULL
+       SELECT @SqlStr = @SqlStr + '
+              AND (TenSP LIKE ''%'+@TenNCC+'%'')
+			  '
+	EXEC SP_EXECUTESQL @SqlStr
+END
+
 
