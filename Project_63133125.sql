@@ -232,6 +232,38 @@ VALUES
   (N'Váy Dài Dự Tiệc Nữ', 700000, 8, N'Váy dài dự tiệc với thiết kế sang trọng, chất liệu vải mềm mại, phù hợp cho các buổi dạ tiệc.', 30, 2, N'product30.jpg');
 GO
 
+/*Đơn Hàng*/
+INSERT INTO DonHang (NgayDat, TinhTrang, ThanhToan, DiaChiNhanHang, MaNguoiDung, TongTien)
+VALUES
+    ('2024-06-02', 1, 1, N'Nha Trang', 2, 730000),
+    ('2024-06-02', 1, 1, N'Hà Nội', 2, 730000),
+    ('2024-06-02', 1, 2, N'Hà Nội', 5, 870000),
+    ('2024-06-02', 1, 1, N'Hà Nội', 5, 870000),
+    ('2024-06-02', NULL, 1, N'Cần Thơ', 6, 190000),
+    ('2024-06-02', 1, 1, N'Cần Thơ', 8, 1390000),
+    ('2024-06-02', 1, 1, N'Nha Trang', 8, 1390000),
+    ('2024-06-02', 1, 1, N'Nha Trang', 8, 1390000),
+    ('2024-06-02', 1, 1, N'Nha Trang', 8, 1390000);
+		GO
+
+
+/*CT Đơn Hàng*/
+INSERT INTO ChiTietDonHang (MaDon, MaSP, SoLuong, DonGia, ThanhTien, PhuongThucThanhToan)
+VALUES
+    (1, 1, 2, 190000, 380000, 1),
+    (2, 3, 1, 350000, 350000, 1),
+    (3, 2, 3, 290000, 870000, 1),
+    (4, 2, 3, 290000, 870000, 1),
+    (5, 1, 1, 190000, 190000, 1),
+    (6, 1, 1, 190000, 190000, 1);
+		GO
+
+select *
+from DonHang dh join ChiTietDonHang ct 
+on dh.Madon=ct.MaDon 
+
+
+
 
 CREATE PROCEDURE SanPham_TimKiem
 	@TenSP nvarchar(100)=NULL,
@@ -262,5 +294,4 @@ IF @TenNCC IS NOT NULL
 			  '
 	EXEC SP_EXECUTESQL @SqlStr
 END
-
 
