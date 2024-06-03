@@ -13,7 +13,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
-            <h2>Chỉnh sửa hồ sơ cá nhân</h2>
+            <h2 style="color: #CC9966;">Chỉnh sửa hồ sơ cá nhân</h2>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.MaNguoiDung)
@@ -60,7 +60,7 @@
             <br />
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Lưu thông tin" class="btn btn-primary" />
+                    <input type="submit" value="Lưu thông tin" class="btn btn-warning" />
                 </div>
             </div>
             <h3 style="color:red">@ViewBag.show</h3>

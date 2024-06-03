@@ -6,7 +6,7 @@
 }
 
 <center>
-    <h2 class=""> Thông tin cá nhân khách hàng </h2>
+    <h2 style="color: #CC9966;"> Thông tin cá nhân khách hàng </h2>
     <br />
     <table class="table-hover table-bordered divGioHang">
         <tr style="">
@@ -37,10 +37,10 @@
 
         <tr>
             <td colspan="5" style="text-align:right">
-                <button class="btn btn-info">
+                <button class="btn btn-warning">
                     @Html.ActionLink("Xem đơn hàng", "Index", "Donhangs63133125", new { area = "" }, new { @class = "nav-link py-3 px-0 px-lg-3 rounded" })
                 </button>
-                <button class="btn btn-primary">
+                <button class="btn btn-secondary">
                     @Html.ActionLink("Chỉnh sửa hồ sơ", "Edit", new { id = Model.MaNguoiDung }, new { @class = "nav-link py-3 px-0 px-lg-3 rounded" })
                 </button>
             </td>

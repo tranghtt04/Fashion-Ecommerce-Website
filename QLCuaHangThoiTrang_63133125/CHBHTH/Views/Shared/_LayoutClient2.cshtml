@@ -27,7 +27,9 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light text-bg-light">
         <div class="container px-4 px-lg-5">
-            @Html.ActionLink("Molla", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <a href="@Url.Action("Index", "Home", new { area = "" })" class="navbar-brand">
+                <img src="~/Images/logo.png" alt="Molla" />
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -36,13 +38,13 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Sản phẩm
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li> @Html.ActionLink("Toàn bộ sản phẩm", "index", "sanpham63133125", new { area = "" }, new { @class = "dropdown-item" }) </li>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li> @Html.ActionLink("Toàn bộ sản phẩm", "index", "sanpham63133125", new { area = "" }, new { @class = "dropdown-item" }) </li>
 
-                                <li><hr class="dropdown-divider" /></li>
-                                <li> @Html.Action("danhmucpartial", "danhmuc63133125", new { @class = "dropdown-item" }) </li>
-                            </ul>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li> @Html.Action("danhmucpartial", "danhmuc63133125", new { @class = "dropdown-item" }) </li>
+                        </ul>
                     </li>
                     <li class="nav-item"> @Html.ActionLink("Liên hệ", "Contact", "Home", new { area = "" }, new { @class = "nav-link activ" })</li>
                     <li class="nav-item"> @Html.ActionLink("Đơn hàng", "Index", "Donhangs63133125", new { area = "" }, new { @class = "nav-link activ" })</li>
@@ -55,11 +57,12 @@
                         @{ if (u != null)
                             {
                                 <div class="col-sm-4 col-md-0">
-                                    <a href="@Url.Action("Profile", "User63133125", new { id = u.MaNguoiDung  })">
-                                        Xin chào : @u.Email
-                                        &nbsp;
-                                        @*@Html.ActionLink("ĐĂNG XUẤT", "DangXuat", "User63133125", new { style = "color:red" })*@
-                                        <a style="color:red" href="/User63133125/DangXuat"> ĐĂNG XUẤT
+                                    <a style="color: #CC9966" href="@Url.Action("Profile", "User63133125", new { id = u.MaNguoiDung  })">
+                                        Xin chào: @u.Email
+                                    </a>
+                                    &nbsp;
+                                    @*@Html.ActionLink("ĐĂNG XUẤT", "DangXuat", "User63133125", new { style = "color:red" })*@
+                                    <a style="color:red" href="/User63133125/DangXuat"> ĐĂNG XUẤT</a>
                                 </div>
                             }
                             else

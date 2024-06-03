@@ -9,9 +9,6 @@
         padding: 40px 0;
     }
 
-    h2, h3 {
-        color: #CC9966;
-    }
 
     p {
         line-height: 1.6;
@@ -25,7 +22,6 @@
     li {
         margin-bottom: 10px;
     }
-
     /* Container Styles */
     .container {
         margin: 0 auto;
@@ -35,19 +31,21 @@
         list-style: none;
     }
 </style>
-<main aria-labelledby="title" style="padding-left: 10pt; background-color: #f8f9fa; color: #343a40;">
-    <h2 id="title" style="color: #007bff;">@ViewBag.Title</h2>
+<main aria-labelledby="title">
+    <div class="container">
+        <h2 id="title" style="color: #CC9966;">@ViewBag.Title</h2>
 
-    <div style="margin-top: 20px;">
-        <address style="margin-bottom: 15px;">
-            <strong>Hồ Thị Thanh Trang</strong><br />
-            ID: 63133125<br />
-            <abbr title="Phone">Phone:</abbr> 0856201906
-        </address>
+        <div style="margin-top: 20px;">
+            <address style="margin-bottom: 15px;">
+                <strong>Hồ Thị Thanh Trang</strong><br />
+                ID: 63133125<br />
+                <abbr title="Phone">Phone:</abbr> 0856201906
+            </address>
 
-        <address>
-            <strong>Support:</strong> <a href="mailto:trang.htt.63ttql@ntu.edu.vn" style="color: #28a745;">Support</a><br />
-            <strong>Marketing:</strong> <a href="mailto:trangho254@gmail.com" style="color: #dc3545;">Marketing</a>
-        </address>
+            <address>
+                <strong>Support:</strong> <a href="mailto:trang.htt.63ttql@ntu.edu.vn" style="color: #28a745;">Support</a><br />
+                <strong>Marketing:</strong> <a href="mailto:trangho254@gmail.com" style="color: #dc3545;">Marketing</a>
+            </address>
+        </div>
     </div>
 </main>

@@ -95,10 +95,10 @@ insert into PhanQuyen values ('Member');
 /*Tài khoản*/
 insert into TaiKhoan (HoTen, Email, Dienthoai, Matkhau, IDQuyen, Diachi)
 values
-  (N'Hồ Thị Thanh Trang', 'trangho254@gmail.com', '0123456789', '123456', 1, N'Khánh Hòa'),
-  (N'Trần Thị Lụa', 'tranthilua@gmail.com', '0987654321', '123456', 2, N'Hồ Chí Minh'),
-  (N'Hồ Thị Thanh Trang', 'trang.htt.63ttql@ntu.edu.vn', '0901122334', '123456', 1, N'Hà Nội'),
   (N'Admin', 'admin@gmail.com', '0902233445', '123456', 1, N'Hải Phòng'),
+  (N'Trần Thị Lụa', 'tranthilua@gmail.com', '0987654321', '123456', 2, N'Hồ Chí Minh'),
+  (N'Hồ Thị Thanh Trang', 'trang.htt.63ttql@ntu.edu.vn', '0901122334', '123456', 2, N'Hà Nội'),
+  (N'Hồ Thị Thanh Trang', 'trangho254@gmail.com', '0123456789', '123456', 2, N'Khánh Hòa'),
   (N'Lê Văn C', 'levanc@gmail.com', '0903344556', '123456', 2, N'Đà Nẵng'),
   (N'Nguyễn Thị D', 'nguyenthid@gmail.com', '0904455667', '123456', 2, N'Bình Dương'),
   (N'Trần Văn E', 'tranvane@gmail.com', '0905566778', '123456', 2, N'Đồng Nai'),
